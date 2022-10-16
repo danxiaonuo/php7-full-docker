@@ -185,6 +185,7 @@ COPY --from=php /data/php /data/php
 COPY ["./conf/nginx/php.conf", "/data/nginx/conf/php.conf"]
 COPY ["./conf/nginx/vhost/default.conf", "/data/nginx/conf/vhost/default.conf"]
 COPY ["./conf/supervisor", "/etc/supervisor"]
+COPY ["./conf/nginx/ssl", "/ssl"]
 COPY ["./conf/www", "/www"]
 
 # 安装相关依赖
