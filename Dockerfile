@@ -4,7 +4,7 @@
 #
 # 构建镜像版本
 ARG BUILD_NGINX_IMAGE=danxiaonuo/nginx:latest
-ARG BUILD_PHP_IMAGE=danxiaonuo/php:latest
+ARG BUILD_PHP_IMAGE=danxiaonuo/php7:latest
 
 # 指定创建的基础镜像
 FROM ${BUILD_NGINX_IMAGE} as nginx
@@ -42,7 +42,7 @@ ENV LD_LIBRARY_PATH=$LD_LIBRARY_PATH
 
 # lua-resty-core
 # https://github.com/openresty/lua-resty-core
-ARG LUA_RESTY_CORE_VERSION=0.1.23
+ARG LUA_RESTY_CORE_VERSION=0.1.26
 ENV LUA_RESTY_CORE_VERSION=$LUA_RESTY_CORE_VERSION
 ARG LUA_LIB_DIR=/usr/local/share/lua/5.1
 ENV LUA_LIB_DIR=$LUA_LIB_DIR
