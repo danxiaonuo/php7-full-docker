@@ -74,7 +74,7 @@ jobs:
         file: ./Dockerfile
         platforms: linux/amd64
         push: true
-        tags: danxiaonuo/php-full:${{ matrix.DOCKER_TAG }}
+        tags: danxiaonuo/php7-full:${{ matrix.DOCKER_TAG }}
       
     - name: 上传至阿里云
       id: buildAndPushImage
@@ -82,7 +82,7 @@ jobs:
       with:
         registry_url: 'registry.cn-hongkong.aliyuncs.com'
         namespaces: 'danxiaonuo'
-        repository_name: 'php-full'
+        repository_name: 'php7-full'
         user_name: ${{ secrets.ALIYUN_USERNAME }}
         password: ${{ secrets.ALIYUN_PASSWORD }}
         image_version: ${{ matrix.DOCKER_TAG }}
